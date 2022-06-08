@@ -13,6 +13,6 @@ public class LoginTests extends BaseTest{
         loginSteps.navigateToLogin();
         loginSteps.setCredentials(Constants.USER_EMAIL,Constants.USER_PASS);
         loginSteps.clickLogin();
-        loginSteps.verifyUsernameMessage("Cosmin Fast");
+        loginSteps.verifyUsernameMessage("ALIN DORO");
     }
 }

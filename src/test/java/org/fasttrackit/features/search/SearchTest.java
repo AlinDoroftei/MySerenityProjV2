@@ -5,13 +5,13 @@ import org.junit.Test;
 
 public class SearchTest extends BaseTest{
 
-    private String searchItem = "necklace";
+    private String searchItem = "dress";
 
     @Test
     public void searchProductTest(){
         loginSteps.doLogin(Constants.USER_EMAIL,Constants.USER_PASS);
         searchSteps.doSearch(searchItem);
-        searchSteps.verifyProductInResults("Silver Desert Ne");
+        searchSteps.verifyProductInResults("LAFAYETTE CONVERTIBLE DRESS");
     }
 
     @Test
@@ -19,5 +19,13 @@ public class SearchTest extends BaseTest{
         loginSteps.doLogin(Constants.USER_EMAIL,Constants.USER_PASS);
         searchSteps.doSearch(searchItem);
         searchSteps.verifyProductInResults("Silver Desert Ne");
+    }
+
+    @Test
+    public void validateOrderingItems(){
+        loginSteps.doLogin(Constants.USER_EMAIL,Constants.USER_PASS);
+        searchSteps.doSearch(searchItem);
+        searchSteps.filterItems("Price");
+        searchSteps.validateOrdering();
     }
 }
